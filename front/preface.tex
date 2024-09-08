@@ -1,0 +1,42 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Check out the accompanying book, Even Better Books with LaTeX the Agile Way in 2023, for a discussion of the template and step-by-step instructions. https://amzn.to/3HqwgXM https://leanpub.com/eBBwLtAW/
+% The template was originally created by Clemens Lode, LODE Publishing (www.lode.de), on 1/1/2023. Feel free to use this template for your book project! 
+% I would be happy if you included a short mention in your book in order to help others to create their own books, too ("Book template based on \textit{Even Better Books with LaTeX the Agile Way in 2023} by Clemens Lode").
+% Contact me at mail@lode.de if you need help with the template or are interested in our editing and publishing services.
+% And don't forget to follow us on Instagram! https://www.instagram.com/lodepublishing/ https://www.instagram.com/betterbookswithlatex/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The preface is written by the author.
+
+\chapter{Preface}\label{preface:cha}
+
+The book you are reading was a side effect of pursuing a doctorate as I was given a chance to publish my own scientific papers related to computer science, and more importantly, to work with students. The experience gave me perspective that I used for writing this book. I hope this book helps you in your scientific publishing endeavors!
+
+\noindent \textbf{\yourName}
+
+\textbf{\yourCity, \yourCountry, \prefaceDate}
+
+
+
+\hfil\psvectorian[height=10mm]{46}\hfil
+
+% Define the series in setup.tex if you want to display the previous part of the series.
+\ifseries
+
+\begin{center}
+	
+% Check out the previous installment in this book series \bfseries \sffamily \LARGE \titleOfTheBookSeries\par:
+
+% \bfseries \Large PART \partPreviousPart: \titlePreviousPart\par
+\psvectorian[height=8mm]{75}
+
+~\\
+\bfseries \small Published by \mypublishingcompany, \mypublishingcompanylocation\par
+
+\ifxetex
+    \includegraphics[width=0.5\textwidth]{\previousCoverImageHiRes}
+\else
+    \includegraphics{\previousCoverImage}
+\fi
+\end{center}
+\fi

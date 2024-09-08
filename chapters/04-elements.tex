@@ -1,0 +1,169 @@
+Scientific writing comes with certain structure-related constraints that are good to know.
+There is structure-related nomenclature that you should be aware of while you should also understand so-called IMRAD structure \citep{wu2011improving}.
+Besides these higher level concepts, I will cover next how to work on the structure of your paper, how to construct your paragraphs, and how to develop a narrative for your paper to make it easier to read.
+
+% Scientific works tend to follow a basic structure where you find some variance.
+
+\section{Structure-related nomenclature}
+
+Depending on your template and where you aim to publish, there are several keywords you should understand and I have listed them before:
+
+\begin{description}
+    \item[Chapter] is the highest level structural concept especially in a long work like a book or a thesis. Occasionally it may be missing entirely from a work and then highest level concept is called a section instead. % In LaTeX it's available through \texttt{\textbackslash chapter\{\}} syntax.
+    \item[Section] sits one level below a chapter although in short works, such as conference or journal papers, it might be the highest level concept have available. % In LaTeX it's available through \texttt{\textbackslash section\{\}} syntax.
+    \item[Subsection] is contained within a section and if the highest level concept of your work is a section, you will use subsections likely a lot. % In LaTeX it's available through \texttt{\textbackslash subsection\{\}} syntax.
+    \item[Subsubsection] is contained within a subsection and usually something has gone wrong if you have to use it. Some journals have disallowed its usage for this reason. Another option is that your work has big enough scope to warrant the usage of subsubsection. % In LaTeX it's available through \texttt{\textbackslash subsubsection\{\}} syntax.
+    \item[Paragraph] allows you to give small titles to paragraphs, but unlike others, it does not show up in the table of contents typically. When used appropriately, paragraph-level titles can give an extra level of readability for your paper and it can be effective even in short papers this way. % In LaTeX it's available through \texttt{\textbackslash paragraph\{\}} syntax.
+\end{description}
+
+After you know the nomenclature of your paper, it is important to use it correctly within the paper itself as you refer to the concepts.
+Typically you use title-case (i.e., "In Section 4, we discuss..."\footnote{A common mistake is to use "we" instead of "I" when you are authoring a paper or a thesis alone.}) these concepts as you write to make them easily visible to the reader.
+Most likely your journal has a related recommendation although this seems like a common practice.
+
+\section{Structuring a paper}
+
+In \citet{ecarnot2015writing}, the authors discuss the so-called IMRAD (Introduction, Methods, Results, and Discussion) model for structuring a paper.
+It is a structure you see in many papers and a good one to follow\footnote{Interestingly enough, the basic structure of scientific papers follows the overall structure of progress, promise, and payoff used often in storytelling. Brandon Sanderson goes into greater detail about the topic in his lecture available at \url{https://www.youtube.com/watch?v=-hO7fM9EHU4}.}.
+Occasionally, you may have to tune the basic structure to fit your purposes.
+For example, in surveys I explain that I am doing a survey in the introduction and then replace the Methods and Results sections with survey-specific chapters.
+I also include a Conclusion chapter at the end of the paper.
+
+The general rule for structuring is that you approach the topic from an abstract angle to motivate the work and bring the reader to the problem in the Introduction, which you then study through a method before starting to go from concrete to abstract again through Discussion and finally Conclusion.
+To give you a better idea of each chapter, I have condensed them to the \autoref{table:imrad} below.
+
+\begin{comment}
+I have tried to capture the purpose of each chapter below:
+
+\begin{description}
+    \item[Introduction] motivates the work and brings the reader to the topic while introducing the structure of the paper. The so-called CARS (Creating a Research Space) model may be useful here depending on the type of your study. In the CARS model, you use three moves to structure your introduction: situation, problem, and solution\footnote{See \url{http://sana.aalto.fi/awe/style/reporting/sections/intros/index.html} for more information.}.
+    \item[Background] is usually provided to let readers not well versed with the topic get into it. Occasionally a good option is to include this type of information within the text using footnotes for example. This may be a good compromise if space requirements are strict. In my writing, I tend to name my background chapter or chapters more specifically to give them more specific context to help with writing and reading comprehension.
+    \item[Method] chapter describes how a problem was approached, although this is not always needed, especially if the method is simple. For something like a benchmark where concrete work has been done with machines, it is an essential chapter to include as it describes the test setup.
+    \item[Results] chapter captures the test findings, and \cite{ecarnot2015writing} provides good tips on how to write it. Again, you might not need this unless your work absolutely requires it. It is also possible that the results chapter has been named differently, for example as "Comparison of ...".
+    \item[Discussion] gives a chance to reflect on the main observations. In discussion, you can bring your voice more to the play; often, it is a fun chapter to work on as it allows a degree of creativity. In case your research has clear limitations, it is a good idea to cover them in discussion to consider both internal and external validity of your work.
+    \item[Conclusion] succinctly reminds the reader of the research problem, captures a paper's key findings and explains what work is still to be done in the form of open problems. While an introduction goes from abstract to concrete, a conclusion achieves the opposite.
+\end{description}
+\end{comment}
+
+\begin{table}
+    \begin{tabular}{l|p{4.0cm}|p{5.0cm}}
+        Chapter & Purpose & Writing approach \\
+        \hline
+        Introduction & Bring the reader to the topic & Start from a broader context, link to related research, and zoom to your research problem before explaining your approach and the structure \\
+        Background & Cover key topics related to your research so that someone not well versed with the topic can understand your work & Usually you should write background only after you have done your research so you know what you should cover. Occasionally it makes sense to split background into multiple small, well-scoped chapters. \\
+        Method (optional) & Explain how you approached your research problem on a methodical level in case your method was complex & Cover the method at such level that another researcher has no trouble reproducing your research \\
+        Results (optional) & Capture your main findings if the paper warrants it (i.e., there are quantitative or qualitative results to explain). \citet{ecarnot2015writing} covers well how to approach writing the results chapter. & Besides text, use visual aids, such as graphs or tables, to condense information to make it easier to digest \\
+        Discussion & Reflect on your key observations & Compared to other chapters, discussion is the most free by its form. In discussion you can consider how your work fits in the broader context. \\
+        Conclusion & Bring the reader out of the topic & Remind the reader of your research problem, cover your key findings, and suggest what kind of further research should be done \\
+    \end{tabular}
+    \caption{Chapter types, their purposes and suggested writing approaches}
+    \label{table:imrad}
+\end{table}
+
+The same structure, from abstract to concrete and back to abstract, is often visible at the section and paragraph levels.
+It is a good practice to begin each section with a brief introduction to bring the reader to the topic.
+Consider using short conclusion sections for additional clarity especially in longer texts to recap the main points for readers in a hurry.
+
+\section{How to work on a structure}
+
+A good way to work with the overall structure of your article is to consider the table of contents and how it reads.
+The critical thing is to remember that the structure of a paper should make it easy for the reader to understand the main elements of your work.
+Although there are some rules on how to set up a structure for your work, as hinted above, I have found the following techniques helpful:
+
+\begin{enumerate}
+    \item Consider the abstraction level of your titles. Occasionally, more concrete is better especially at the lower levels of the title hierarchy, and sometimes, I have replaced the conventional background section with a more specific title or even split it into a few shorter sections.
+    \item In case you notice that a section has deep nesting, that might imply you may have to split up something.
+    \item If a section might feel overly long in the first draft, consider if you should split it up somehow.
+    \item Occasionally, a certain order makes more sense than some other. Usual hints of this are the need to explain a concept before other explanations make sense. Especially early on, many basic definitions may be needed, and that is a good chance to introduce abbreviations to make writing and reading easier.
+\end{enumerate}
+
+Depending on your writing style, you may benefit from planning a structure upfront.
+You should at least put the publication specific chapters that are expected into place early on as you know you will have to write those eventually.
+
+\section{How to develop a narrative}
+
+Although scientific writing is about bringing together known facts, it is also about narrative.
+For me, a big part of a writer is to guide the reader through the content in a natural way. While scientific papers are not stories, they tend to have a point of view and certain key messages.
+As a writer, it is your task to think carefully what are the messages you want to get through and structure your paper accordingly.
+
+Another way to look at it is that in a scientific paper you are bringing together multiple actors, or concepts, and then you do something with them while coming up with new insights through your research.
+Therefore it makes sense to consider how you introduce the concepts and how they build on top of each other.
+While doing this work, it can be a good idea to build internal references within the text to occasionally remind the reader of certain piece of key information that was provided before.
+
+\section{How to write an abstract for your paper}
+
+Abstracts are used to communicate the contents of a scientific paper to other scientists effectively.
+Typically abstracts tend to be short and up to a couple of hundred words.
+The purpose of an abstract is to capture the essential information from a paper and act as a marketing text for it.
+Apart from the title, it is often the first thing read, and it already acts as an initial filter as readers decide if they should keep reading or skip the paper.
+Based on this background, you should effectively introduce the topic to the reader, motivate your problem, cover your study method, and explain the main findings.
+I have described a basic recipe for covering the necessary bases in your abstract below:
+
+\begin{enumerate}
+    \item Describe the context of your research
+    \item Explain why it is important to study your topic
+    \item Describe the research problem
+    \item Explain how the research problem was approached by covering your research methods
+    \item Cover the main findings of your research
+\end{enumerate}
+
+% TODO: Add tips on how to write discussion (viewpoint, alt. directions, question, others?)
+
+\section{How to write a Discussion chapter}
+
+The discussion chapter of your paper is the one where you can reflect on your findings in a relatively free form.
+I use the following structure when writing a discussion: 1. brief introduction with a main point or two, 2-n. individual points to discuss, n+1. optionally discussion of limitations depending on the type of the paper.
+
+\subsection{Introduction phrases out your main argument}
+
+The introduction to a discussion is a good point for phrasing the main argument of your paper in a clear manner.
+For example, you can point out the main impact of the topic you discuss.
+The introduction is the perfect place for high level commentary that foreshadows your specific discussion points.
+
+\subsection{Consider the types of your discussion points}
+
+I tend to divide my discussion arguments into three categories: 1. observations 2. questions 3. contrasts.
+Each category has its purpose and I will cover them in greater detail next.
+
+Observations are perhaps the easiest category out of the three as they are derived from what you learned during your research process.
+For example, you might have noticed specific benefits, challenges, or opportunities related to your topic and it is good to consider these in detail.
+
+Questions are a good way to consider whether some proposition related to your topic might be true.
+Questions allow you to interrogate your topic in a broader context and consider for example the implications of your findings.
+A good way to derive questions is to consider what kind of questions your reader might have in mind when reading your paper and anticipate them.
+
+Contrasts allow you to put your research next to other related topics and discuss with adjacent research while placing your results to a broader context.
+A good way to do this is to have a title along "Other ways to..." as that lets you bring other perspectives to your paper easily.
+
+% \subsection{Individual sections approach your topic from different angles}
+
+% I tend to use the arguments from the first category, observations, the most as these are things I noticed based on the research.
+% Questions are useful for considering the topic from specific angles and often you can anticipate what kind of questions the reader might have in mind and then use them here.
+% The third category of contrasts is a good way to consider your topic relative to other related ones as contrasting lets you discuss with other papers adjacent to yours and consider your work relative to yours.
+
+\subsection{Addressing limitations}
+
+For limitations, it is a good idea to consider both internal and external validity.
+By internal validity, I refer to the validity of the test setup itself and how you set things up for your measurements.
+External validity includes factors beyond your control in case you rely on external vendors or instruments that you do not understand completely.
+It is a good idea to consider validity because it lets other researchers know where your results might or might not apply and it could be a nice research topic for someone to try to replicate the results under different constraints.
+
+\begin{comment}
+\section{How to write a Conclusion chapter}
+
+Compared to Discussion, Conclusion is generally a faster one to write as it does not have to achieve a lot.
+The purpose of Conclusion is the opposite of Introduction as instead of bringing a reader to the topic, you bring them out of the topic.
+A typical way to write a Conclusion is to remind the reader of the problem and even write out your research questions, explain your main findings in several paragraphs, and show the open problems.
+\end{comment}
+
+\section{Conclusion}
+
+Although scientific papers tend to follow a specific kind of standard structure, there is still work to be done as a writer.
+The general structure tends to go from a broad to specific and then back to broad.
+
+You can expect to write chapters, such as Introduction, Discussion, and Conclusion, always, but the chapters that exist in between tend to vary based on what is needed.
+It is in these chapters where you can stand out by choosing your titles carefully to communicate the intent.
+Choosing good titles helps to scope your writing and think about what content is needed and how your work flows from a concept to another.
+
+Scientific writing is not only about following these types of conventions but also developing a narrative that allows you to highlight your key messages to the reader.
+Papers tend to include some level of repetition on different levels for this reason as you examine the topic from different angles.
+As a writer, your task is to make it easy for the reader to follow your thinking and understand your key findings.
