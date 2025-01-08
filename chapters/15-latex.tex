@@ -13,9 +13,9 @@ I prefer to separate my chapters as follows:
     \item \texttt{main.tex} - The main entry point of the project where the compilation begins. % and references to the other files are created.
     % \item \texttt{chapters/01-abstract.tex} - If your work has an extended abstract, as is typical for theses, it may make sense to separate it into a file.
     \item \texttt{chapters/01-introduction.tex} - Introduction chapter.
-    \item \texttt{chapters/0x-name.tex} - Content chapters.
-    \item \texttt{chapters/09-discussion.tex} - Discussion chapter.
-    \item \texttt{chapters/10-conclusion.tex} - Conclusion chapter.
+    \item \texttt{chapters/2x-name.tex} - Content chapters.
+    \item \texttt{chapters/90-discussion.tex} - Discussion chapter.
+    \item \texttt{chapters/100-conclusion.tex} - Conclusion chapter.
 \end{itemize}
 
 I use a declaration like this for each chapter at \texttt{main.tex} to import them:
@@ -26,7 +26,7 @@ I use a declaration like this for each chapter at \texttt{main.tex} to import th
 \input{09-discussion}
 \end{verbatim}
 
-In case you expect to add an unknown number of chapters between introduction and discussion, you could give discussion a fairly high number as then you have a good amount of space to add chapters in between without having to adjust your numbering and references as you work on your chapter structure.
+In case you expect to add an unknown number of chapters between introduction and discussion, you could give discussion a fairly high number as then you have a good amount of space to add chapters in between without having to adjust your numbering and references as you work on your chapter structure. The main point is to keep the chapters numerically ordered so the structure follows your work.
 
 Beyond chapters, I have found it can be useful to separate for example tables and figures to separate LaTeX files and then use \texttt{\textbackslash input} command to import them where needed.
 The main benefit is that doing this keeps your text clean and supporting resources neatly organized.
