@@ -2,29 +2,36 @@ LaTeX is a typesetting system that excels at scientific publishing.
 It cannot only be text that it can layout but images as well, and it can even create graphs on the fly for you.
 I won't cover LaTeX in great detail in this context and I recommend checking official \href{https://www.latex-project.org/}{LaTeX documentation} and \href{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}{Overleaf's 30 minute introduction to LaTeX}. % I cover common LaTeX related tips in the sections below.
 
-\section{Creating a structure in LaTeX}
+\section{Create a clear structure in LaTeX}
 \label{sec:creating-a-structure}
 
 % Even when using a template, I have found creating a file-based structure in my LaTeX projects useful. To give an example, consider the following file arrangement:
 
-I prefer to separate my chapters as follows:
+I prefer to separate my chapters as follows to make it easier to work with large amounts of text:
 
 \begin{itemize}
     \item \texttt{main.tex} - The main entry point of the project where the compilation begins. % and references to the other files are created.
-    % \item \texttt{chapters/01-abstract.tex} - If your work has an extended abstract, as is typical for theses, it may make sense to separate it into a file.
+    \item \texttt{toc.tex} - This file refers to individual files so I have a single file where to find my table of contents easily.
+    \item \texttt{meta.tex} - I store meta information, i.e., title, author etc. to this file so they are easy to find.
+    \item \texttt{chapters/00-abstract.tex} - If your work has an extended abstract, as is typical for theses, it may make sense to separate it into a file.
     \item \texttt{chapters/01-introduction.tex} - Introduction chapter.
     \item \texttt{chapters/2x-name.tex} - Content chapters.
     \item \texttt{chapters/90-discussion.tex} - Discussion chapter.
     \item \texttt{chapters/100-conclusion.tex} - Conclusion chapter.
 \end{itemize}
 
-I use a declaration like this for each chapter at \texttt{main.tex} to import them:
+Note that if I am working on a paper, I tend to use the name \texttt{sections} instead of \texttt{chapters} since that maps better to the nomenclature used there.
+Chapters are more natural choice for books like the one I am writing here.
+
+I use a declaration like this for each chapter at \texttt{toc.tex} to import them:
 
 \begin{verbatim}
 % Use a \ref{} or a \autoref{} to point to the label
 \chapter{Discussion} \label{ch:discussion}
 \input{09-discussion}
 \end{verbatim}
+
+The same idea works for importing the toc file and meta information to my \texttt{main.tex} and you will have find the right spots in your initial template for this purpose.
 
 In case you expect to add an unknown number of chapters between introduction and discussion, you could give discussion a fairly high number as then you have a good amount of space to add chapters in between without having to adjust your numbering and references as you work on your chapter structure. The main point is to keep the chapters numerically ordered so the structure follows your work.
 
@@ -55,6 +62,9 @@ To customize the text \texttt{autoref} emits, you can adjust the behavior as fol
 
 See \href{https://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/hyperref/doc/hyperref-doc.html}{hyperref documentation}\footnote{\url{https://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/hyperref/doc/hyperref-doc.html}} for more specific instructions.
 
+Another option to \texttt{hyperref} is known as \href{https://www.dr-qubit.org/cleveref.html}{cleveref}\footnote{\url{https://www.dr-qubit.org/cleveref.html}} and in some ways it goes beyond \texttt{hyperref} as it supports more complex ways of referring to your content.
+I have found \texttt{hyperref} to be enough for simple use cases but when you want to do something more advanced then it may be worth it to refactor your code to use \texttt{cleveref} or use it out of the box.
+
 \section{Leverage BibTeX for handling references}
 
 To make it easier to \textbf{\textbackslash cite} references, leverage \href{https://www.bibtex.org/}{BibTeX}\footnote{\url{https://www.bibtex.org/}}. BibTeX is a system that allows you to gather references to a local database. 
@@ -63,7 +73,9 @@ Then, it will pick up the references you use and format them correctly based on 
 If you have online references, use \href{https://www.getbibtex.com/}{getbibtex.com} to format them initially and then fill the missing fields before copying.
 The tool writes the date of access for later retrieval. % so it can be accessed later using \url{https://archive.org/} assuming the content was indexed.
 
-\section{Citing in LaTeX}
+% Another good thing to keep in mind is that since occasionally a paper to cite might have even tens of authors, you can condense them with ", and others" kind of syntax at the author field.
+
+\section{Cite in LaTeX}
 \label{sec:citing-in-latex}
 
 LaTeX renders your citations different depending on which citation style you have enabled through BibTeX.
@@ -72,17 +84,24 @@ I have listed the most commonly used citation commands based on \citep{natbib202
 \begin{description}
     \item[\textbf{\textbackslash cite}] is the command that you use by default with most styles for commentary style citations.
     \item[\textbf{\textbackslash citep}] generates parentheses around your citation and it is a good option for commentary style citations.
-    \item[\textbf{\textbackslash citet}] is a textual citation and it works well when your citation is the subject of a sentence.
+    \item[\textbf{\textbackslash citet}] is a textual citation and it works well when your citation is the subject of a sentence. Note that this command does not always work as it depends on the citation style of your project.
 \end{description}
 
 Occasionally you might have to cite multiple sources at once.
 For this purpose, the cite commands accept multiple parameters like this: \texttt{\textbackslash cite\{vepsalainen2024, ryba2021\}}. In addition, if you want to point to specific pages within a publication, you can do it through the following syntax: \texttt{\textbackslash cite[p.3-4]\{vepsalainen2024\}}.
 
-You can see visual examples of citations in Chapter \ref{ch:citing}.
+You can see visual examples of citations in chapter \nameref{ch:citing}.
 
 \section{Keep track of things to do with todonotes}
 
-I recommend using a LaTeX package, such as \href{https://ctan.org/pkg/todonotes}{todonotes}\footnote{\url{https://ctan.org/pkg/todonotes}} to track things to do within a document and also to explain what you still have to cover. Due to these factors, using \texttt{todonotes} can be particularly useful when collaborating. % Another useful one is \href{https://ctan.org/pkg/comment}{comment}\footnote{\url{https://ctan.org/pkg/comment}} as the package allows you to remove entire blocks of content easily.
+I recommend using a LaTeX package, such as \href{https://ctan.org/pkg/todonotes}{todonotes}\footnote{\url{https://ctan.org/pkg/todonotes}} to track things to do within a document and also to explain what you still have to cover.
+Due to these factors, using \texttt{todonotes} can be particularly useful when collaborating with other people.
+I prefer to set \texttt{\textbackslash setuptodonotes\{inline\}} as setting todos inline keeps the todos within text itself at the cost of breaking your layout slightly as this takes more vertical space.
+
+\section{Comment out swaths of lines easily}
+
+Although LaTeX allows you to comment out individual lines of code using the \texttt{\%} character, it gets wieldy do use when you want to comment out larger entities at once.
+For this reason I prefer to use \href{https://ctan.org/pkg/comment}{comment}\footnote{\url{https://ctan.org/pkg/comment}} package as it gives block-level (\texttt{\textbackslash \{begin\}\{comment\}} and \texttt{\textbackslash \{end\}\{comment\}}) support for comments.
 
 % \section{Leverage LaTeX formatting}
 
@@ -95,7 +114,7 @@ TikZ is a great example of a package capable of creating graphics and \href{http
 
 Given scientific data is often available in CSV\footnote{Comma Separated Values.} format, it is useful to know how to feed CSV to your graphics or even tables. The \href{https://tex.stackexchange.com/questions/83888/how-to-plot-data-from-a-csv-file-using-tikz-and-csvsimple}{graphics use case has been covered at Stack Exchange}\footnote{\url{https://tex.stackexchange.com/questions/83888/how-to-plot-data-from-a-csv-file-using-tikz-and-csvsimple}} and the \href{https://tex.stackexchange.com/questions/146716/importing-csv-file-into-latex-as-a-table}{the same goes for tables}\footnote{\url{https://tex.stackexchange.com/questions/146716/importing-csv-file-into-latex-as-a-table}}.
 
-Another approach is to generate LaTeX syntax from your tooling and then put the resulting code to separate LaTeX files that you then \texttt{\textbackslash input} where needed.
+Another approach is to generate LaTeX syntax from your tooling and then put the resulting code to separate LaTeX files that you then use \texttt{\textbackslash input} where needed.
 
 \section{Use correct formatting}
 
@@ -110,7 +129,7 @@ LaTeX includes many formatting options and it is good to be aware of the most us
 
 Beyond these, I recommend looking into different list formatting options provided by LaTeX as each of them has their uses.
 
-\section{Highlighting code examples}
+\section{Highlight code examples}
 
 In case you are authoring papers related to computer science, it is likely that you will have to include some type of code examples to your work.
 There are several ways to achieve this using LaTeX: \texttt{verbatim} environment, \href{https://ctan.org/pkg/listings}{listings package}\footnote{\url{https://ctan.org/pkg/listings}}, and \href{https://ctan.org/pkg/minted}{minted package}\footnote{\url{https://ctan.org/pkg/minted}} for further flexibility.
@@ -130,7 +149,16 @@ Although it might be natural to write a paragraph on a single line, I recommend 
 Instead, it is better to write each sentence on a line of its own as doing this will generate diffs that are easier to understand.
 In this approach, paragraphs are separated by an empty newline.
 
-\section{Conclusion}
+\section{Keep publication guidelines in mind}
+
+Especially technical publications often offer LaTeX, and even Overleaf, templates that you should use to author your papers.
+It is likely that you will have to modify these templates to your liking structurally at least.
+Occasionally these templates come with specific technical limitations that are covered within them.
+For example, you may have to use a specific LaTeX compiler for the templates to work or you have to avoid using specific packages altogether.
+It is particularly important to pay attention to LaTeX errors and warnings before you submit since often there is something to fix and especially overfull warnings can point out to small layout issues you can fix by altering wording or by pointing out where to break a word assuming there are some LaTeX does not know how to hyphenate.
+By following template rules, you make it easier for the publisher and avoid additional work related to tweaking the output.
+
+\section{Summary}
 
 LaTeX is a powerful authoring environment for scientists although it comes with a learning curve.
 The system is used particularly in computer science and it has benefits for fields beyond it.
